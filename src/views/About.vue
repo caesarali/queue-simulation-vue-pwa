@@ -1,5 +1,16 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <v-container>
+        <v-layout text-center>
+            <h3>About</h3>
+        </v-layout>
+    </v-container>
 </template>
+
+<script>
+export default {
+    created() {
+        this.$store.commit('setHeader', 'About')
+    }
+}
+</script>
+

@@ -1,6 +1,6 @@
 {
-  "name": "montecarlo",
-  "short_name": "montecarlo",
+  "name": "SmartCalculator - Queue Simulation",
+  "short_name": "SmartCalculator",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

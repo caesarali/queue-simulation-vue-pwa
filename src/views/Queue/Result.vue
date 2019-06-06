@@ -1,25 +1,32 @@
 <template>
-    <v-data-table :headers="headers" :items="queues" class="elevation-1" hide-actions>
-        <template v-slot:items="props">
-            <td class="text-xs-center">{{ props.item.no }}.</td>
-            <td class="text-xs-center">{{ props.item.z }}</td>
-            <td class="text-xs-center">{{ props.item.r }}</td>
-            <td class="text-xs-center">{{ props.item.iat }}</td>
-            <td class="text-xs-center">{{ props.item.at }}</td>
-            <td class="text-xs-center">{{ props.item.st }}</td>
-            <td class="text-xs-center">{{ props.item.it }}</td>
-            <td class="text-xs-center">{{ props.item.ft }}</td>
-            <td class="text-xs-center">{{ props.item.qt }}</td>
-            <td class="text-xs-center">{{ props.item.spit }}</td>
-            <td class="text-xs-center">{{ props.item.spt }}</td>
-        </template>
-        <template v-slot:footer v-if="queues.length">
-            <td colspan="8" class="text-xs-center font-weight-bold">Total</td>
-            <td class="text-xs-center font-weight-bold">{{ queuesSum.qt }}</td>
-            <td class="text-xs-center font-weight-bold">{{ queuesSum.spit }}</td>
-            <td class="text-xs-center font-weight-bold">{{ queuesSum.spt }}</td>
-        </template>
-    </v-data-table>
+    <div>
+        <v-data-table :headers="headers" :items="queues" class="elevation-1" hide-actions>
+            <template v-slot:items="props">
+                <td class="text-xs-center">{{ props.item.no }}.</td>
+                <td class="text-xs-center">{{ props.item.z }}</td>
+                <td class="text-xs-center">{{ props.item.r }}</td>
+                <td class="text-xs-center">{{ props.item.iat }}</td>
+                <td class="text-xs-center">{{ props.item.at }}</td>
+                <td class="text-xs-center">{{ props.item.st }}</td>
+                <td class="text-xs-center">{{ props.item.it }}</td>
+                <td class="text-xs-center">{{ props.item.ft }}</td>
+                <td class="text-xs-center">{{ props.item.qt }}</td>
+                <td class="text-xs-center">{{ props.item.spit }}</td>
+                <td class="text-xs-center">{{ props.item.spt }}</td>
+            </template>
+            <template v-slot:footer v-if="queues.length">
+                <td colspan="8" class="text-xs-center font-weight-bold">Total</td>
+                <td class="text-xs-center font-weight-bold">{{ queuesSum.qt }}</td>
+                <td class="text-xs-center font-weight-bold">{{ queuesSum.spit }}</td>
+                <td class="text-xs-center font-weight-bold">{{ queuesSum.spt }}</td>
+            </template>
+        </v-data-table>
+        <br>
+        <v-subheader class="pa-0">Average :</v-subheader>
+        <p v-for="(item, index) in queuesAverage" :key="index">
+            {{ item.text }} <u>{{ item.value }}</u>
+        </p>
+    </div>
 </template>
 
 <script>
@@ -92,6 +99,25 @@ export default {
                 spit: this.queues.map(item => item.spit).reduce((a,b) => a + b, 0),
                 spt: this.queues.map(item => item.spt).reduce((a,b) => a + b, 0)
             }
+        },
+
+        queuesAverage() {
+            let length = this.variable.queue_length
+            let last_ft = this.queues.map(item => item.ft)[length-1]
+
+            let avg_qt = this.queuesSum.qt / length
+            let avg_spt = this.queuesSum.spt / length
+            let avg_ql = this.queuesSum.qt / last_ft
+            let avg_qi = this.queuesSum.spt / last_ft
+            let avg_spit = this.queuesSum.spit / last_ft
+
+            return [
+                { text: 'Rata-rata waktu antrian = ', value: length ? avg_qt : 0 },
+                { text: 'Rata-rata waktu didalam sistem = ', value: length ? avg_spt : 0 },
+                { text: 'Rata-rata panjang antrian = ', value: length ? avg_ql.toFixed(2) : 0 },
+                { text: 'Rata-rata jumlah item didalam antrian = ', value: length ? avg_qi.toFixed(2) : 0 },
+                { text: 'SP Idle Time = ', value: length ? avg_spit.toFixed(2) : 0 },
+            ]
         }
     }
 }

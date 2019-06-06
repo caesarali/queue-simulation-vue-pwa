@@ -13,7 +13,6 @@ export default new Router({
 	routes: [
 		{ path: '/', name: 'home', component: Home },
 		{ path: '/queue', name: 'queue', component: () => import( /* webpackChunkName: "about" */ './views/Queue/Index.vue') },
-		{ path: '/team', name: 'team', component: () => import( /* webpackChunkName: "about" */ './views/Team.vue') },
-		{ path: '/about', name: 'about', component: () => import( /* webpackChunkName: "about" */ './views/About.vue') }
+		{ path: '/team', name: 'team', component: () => import( /* webpackChunkName: "about" */ './views/Team.vue') }
 	]
 })

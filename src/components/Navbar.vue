@@ -16,13 +16,6 @@
                 <v-btn icon v-on="on"><v-icon>more_vert</v-icon></v-btn>
             </template>
             <v-list dense>
-                <v-list-tile :to="{ name: 'about' }">
-                    <v-list-tile-action>
-                        <v-icon>info</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-title>About</v-list-tile-title>
-                </v-list-tile>
-                <v-divider></v-divider>
                 <v-subheader>Social</v-subheader>
                 <v-list-tile href="https://github.com/caesarali" target="_blank">
                     <v-list-tile-action>

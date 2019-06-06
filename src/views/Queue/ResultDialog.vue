@@ -1,7 +1,7 @@
 <template>
     <v-layout row justify-center>
         <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
-            <v-card tile>
+            <v-card tile :style="$root.darkMode ? 'background-color: #303030' : 'background-color: #fafafa'">
                 <v-toolbar dark color="teal" fixed>
                     <v-btn icon @click="dialog = false">
                         <v-icon>arrow_back</v-icon>
@@ -12,11 +12,11 @@
                         <v-icon>replay</v-icon>
                     </v-btn>
                 </v-toolbar>
-                <v-content class="pb-0">
+                <v-content>
                     <v-container>
                         <b>Info : </b>
                         <v-subheader class="pa-0 mb-1">
-                            Scroll halaman kesamping (kanan/kiri) untuk melihat keseluruhan isi tabel.
+                            Geser halaman kesamping (kanan/kiri) untuk melihat keseluruhan isi tabel.
                         </v-subheader>
                         <result :variable="variable"></result>
                     </v-container>

@@ -28,6 +28,7 @@ new Vue({
     },
     methods: {
         goBack() {
+            this.bottomNav = true
             this.$router.go(-1)
         }
     },

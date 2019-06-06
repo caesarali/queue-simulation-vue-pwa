@@ -1,7 +1,7 @@
 <template>
     <v-layout row justify-center>
-        <v-dialog dark v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
-            <v-card dark tile>
+        <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+            <v-card tile>
                 <v-toolbar dark color="teal" fixed>
                     <v-btn icon @click="dialog = false">
                         <v-icon>arrow_back</v-icon>

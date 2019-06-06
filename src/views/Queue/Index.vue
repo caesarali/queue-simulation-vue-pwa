@@ -82,6 +82,7 @@ export default {
 
     created() {
         this.$store.commit('setHeader', 'Queue Simulation')
+        this.$root.bottomNav = false
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-	<v-bottom-nav :value="$root.bottomNav" fixed class="hidden-md-and-up" v-resize="onResize" app>
+	<v-bottom-nav :value="$root.bottomNav" class="hidden-md-and-up" v-resize="onResize" app>
 		<v-btn color="teal" flat :to="{ name: 'home' }" exact>
 			<span>Home</span>
 			<v-icon>home</v-icon>

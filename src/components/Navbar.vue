@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar dark color="teal" fixed ref="navbar" app>
+    <v-toolbar dark color="teal" ref="navbar" app>
         <v-btn icon v-if="backButton" @click="$root.goBack">
             <v-icon>arrow_back</v-icon>
         </v-btn>

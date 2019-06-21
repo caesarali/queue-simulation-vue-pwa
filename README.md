@@ -1,5 +1,8 @@
 # Implementasi Simulasi Antrian menggunakan VueJS.
 
+## Screenshot
+![Queue Simulation](/src/screenshot/queue-simulation.png)
+
 ## Project setup
 ```
 npm install

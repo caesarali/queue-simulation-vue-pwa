@@ -1,9 +1,7 @@
 # Implementasi Simulasi Antrian menggunakan VueJS.
 
 ## Demo
-```
-https://queue.caesarali.site
-```
+[Demo Page: http://queue.caesarali.site](http://queue.caesarali.site)
 
 ## Screenshot
 ![Queue Simulation](/src/screenshot/queue-simulation.png)

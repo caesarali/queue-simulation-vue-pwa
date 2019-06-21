@@ -1,4 +1,4 @@
-# montecarlo
+# Implementasi Simulasi Antrian menggunakan VueJS.
 
 ## Project setup
 ```

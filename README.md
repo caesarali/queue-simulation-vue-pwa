@@ -1,7 +1,7 @@
 # Implementasi Simulasi Antrian menggunakan VueJS.
 
 ## Demo
-[Queue Simulation : http://queue.caesarali.site](https://queue.caesarali.site)
+[Queue Simulation : https://smartcalculator-be80f.web.app/](https://smartcalculator-be80f.web.app/)
 
 ## Screenshot
 ![Queue Simulation](/src/screenshot/queue-simulation.png)
